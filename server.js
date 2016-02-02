@@ -3,12 +3,13 @@ var url = require("url");
 var fs = require("fs");
 var iconv = require('iconv-lite');
 
-var file = "a.txt";
+var date=new Date().getTime();
+var file = date+".log";
 function writeFile(str)
 {
     // 把中文转换成字节数组
     var arr = iconv.encode(str, 'gbk');
-    console.log(arr);
+    //console.log(arr);
 
     // appendFile，如果文件不存在，会自动创建新文件
     // 如果用writeFile，那么会删除旧文件，直接写新文件
